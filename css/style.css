@@ -1,15 +1,9 @@
-/* @import url("https://fonts.maateen.me/charu-chandan-3d/font.css"); */
-/* @import url("https://fonts.maateen.me/charu-chandan-hard-stroke/font.css"); */
-/* @import url('https://cdn.rawgit.com/sh4hids/bangla-web-fonts/durbar/stylesheet.css'); */
-@import url('https://fonts.googleapis.com/css?family=Galada');
+@import url("https://fonts.googleapis.com/css?family=Galada");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "CharuChandan3D", sans-serif; */
-  /* font-family: "CharuChandanHardStroke", sans-serif; */
-  /* font-family: 'Durbar', sans-serif; */
-  font-family: 'Galada', cursive;
+  font-family: "Galada", cursive;
 }
 
 body,
@@ -31,8 +25,8 @@ html {
   gap: 20px;
 }
 
-h1{
-    font-size: 40px;
+h1 {
+  font-size: 40px;
 }
 
 .timer {
@@ -45,18 +39,19 @@ h1{
 .time {
   font-size: 80px;
   font-weight: 900;
-  /* padding-right: 30px; */
   position: relative;
   padding-left: 15px;
 }
-/* .time::after {
-  content: ":";
-  position: absolute;
-  right: -12px;
-  top: 44%;
-  transform: translateY(-50%);
-} */
 
-.no-content::after {
-  content: "";
+@media only screen and (max-width: 767px) {
+  .wrapper {
+    padding: 0 10px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  .time {
+    font-size: 25px;
+    text-align: center;
+  }
 }
