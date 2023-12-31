@@ -1,46 +1,64 @@
-@import url("https://fonts.googleapis.com/css?family=Galada");
+@import url("https://fonts.maateen.me/solaiman-lipi/font.css");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Galada", cursive;
+  font-family: "SolaimanLipi", sans-serif;
 }
 
 body,
 html {
   overflow: hidden;
-  background-color: black;
+  /* background-color: black; */
 }
 
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 50px 20px;
   display: flex;
-  height: 100vh;
+  height: auto;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: white;
+  color: black;
   gap: 20px;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .timer {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
 .time {
-  font-size: 80px;
+  font-size: 40px;
+  padding: 20px;
   font-weight: 900;
   position: relative;
   padding-left: 15px;
+  background-color: #d71c23;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  width: 150px;
+  height: 150px;
+}
+.time span{
+  font-size: 30px;
+}
+.time span.number {
+  font-size: 50px;
 }
 
 @media only screen and (max-width: 767px) {

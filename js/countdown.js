@@ -49,13 +49,13 @@ function displayTime() {
   const secs = formatTime(Math.floor((getDifference() / 1000) % 60));
 
   document.querySelector(".days").innerHTML =
-    convertEnglishNumberToBanglaNumber(days) + " দিন";
+    convertEnglishNumberToBanglaNumber(days);
   document.querySelector(".hours").innerHTML =
-    convertEnglishNumberToBanglaNumber(hours) + " ঘন্টা";
+    convertEnglishNumberToBanglaNumber(hours);
   document.querySelector(".mins").innerHTML =
-    convertEnglishNumberToBanglaNumber(mins) + " মিনিট";
+    convertEnglishNumberToBanglaNumber(mins);
   document.querySelector(".secs").innerHTML =
-    convertEnglishNumberToBanglaNumber(secs) + " সেকেন্ড";
+    convertEnglishNumberToBanglaNumber(secs);
 }
 
 // call the displayTime function every second
