@@ -76,14 +76,28 @@ html {
 }
 
 @media only screen and (max-width: 767px) {
-  .timer-wrapper {
-    padding: 0 10px;
-  }
   .timer-wrapper h1 {
-    font-size: 25px;
+    font-size: 35px;
+  }
+  .timer-wrapper h2 {
+    font-size: 20px;
   }
   .timer-wrapper .time {
     font-size: 25px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .timer-wrapper .timer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timer-wrapper h1 {
+    font-size: 25px;
+  }
+
+  .timer-wrapper h2 {
+    font-size: 18px;
   }
 }
