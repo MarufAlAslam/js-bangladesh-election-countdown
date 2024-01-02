@@ -1,0 +1,175 @@
+<style>
+  @import url("https://fonts.maateen.me/solaiman-lipi/font.css");
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "SolaimanLipi", sans-serif;
+  }
+
+  body,
+  html {
+    overflow: hidden;
+    /* background-color: black; */
+  }
+
+  .timer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    gap: 20px;
+    background: linear-gradient(#c8161c54, #00000086),
+      url("https://i.ibb.co/hFnFdc8/Election-Cover-2.jpg");
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+  }
+
+  .timer-wrapper h1 {
+    font-size: 40px;
+    color: #fff;
+  }
+
+  .timer-wrapper h2 {
+    color: white;
+  }
+
+  .timer-wrapper .timer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .timer-wrapper .time {
+    font-size: 40px;
+    padding: 20px;
+    font-weight: 900;
+    position: relative;
+    padding-left: 15px;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: #d71c23;
+    width: 120px;
+    height: 120px;
+  }
+  .timer-wrapper .time span {
+    font-size: 24px;
+  }
+  .timer-wrapper .time span.number {
+    font-size: 45px;
+  }
+
+  .timer-wrapper .text-center {
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .timer-wrapper {
+      padding: 0 10px;
+    }
+    .timer-wrapper h1 {
+      font-size: 25px;
+    }
+    .timer-wrapper .time {
+      font-size: 25px;
+      text-align: center;
+    }
+  }
+</style>
+
+<div class="timer-wrapper">
+  <div class="text flex text-center">
+    <h1>দ্বাদশ জাতীয় সংসদ নির্বাচন ২০২৪</h1>
+    <h2>ভোট গ্রহণের বাকি আর মাত্র</h2>
+  </div>
+  <div class="timer">
+    <div class="time"><span class="number days"></span> <span>দিন</span></div>
+    <div class="time">
+      <span class="number hours"></span> <span>ঘন্টা</span>
+    </div>
+    <div class="time"><span class="number mins"></span> <span>মিনিট</span></div>
+    <div class="time">
+      <span class="number secs"></span> <span>সেকেন্ড</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 1. create a function to get the current date and time
+  function getCurrentDate() {
+    const currentDate = new Date();
+    return currentDate;
+  }
+
+  // 2. create a function to get the future date and time
+  function getFutureDate() {
+    const futureDate = new Date("January 7, 2024 08:00:00");
+    return futureDate;
+  }
+
+  // 3. create a function to get the difference between the future and current date and time
+  function getDifference() {
+    const difference = getFutureDate() - getCurrentDate();
+    return difference;
+  }
+
+  // 4. create a function to format the time
+  function formatTime(time) {
+    return time < 10 ? `0${time}` : time;
+  }
+
+  // convert english number to bangla number
+  function convertEnglishNumberToBanglaNumber(number) {
+    const banglaNumbers = {
+      0: "০",
+      1: "১",
+      2: "২",
+      3: "৩",
+      4: "৪",
+      5: "৫",
+      6: "৬",
+      7: "৭",
+      8: "৮",
+      9: "৯",
+    };
+
+    return number.toString().replace(/\d/g, (match) => banglaNumbers[match]);
+  }
+
+  // 5. create a function to display the time
+  function displayTime() {
+    const days = formatTime(
+      Math.floor(getDifference() / (1000 * 60 * 60 * 24))
+    );
+    const hours = formatTime(
+      Math.floor((getDifference() / (1000 * 60 * 60)) % 24)
+    );
+    const mins = formatTime(Math.floor((getDifference() / (1000 * 60)) % 60));
+    const secs = formatTime(Math.floor((getDifference() / 1000) % 60));
+
+    document.querySelector(".days").innerHTML =
+      convertEnglishNumberToBanglaNumber(days);
+    document.querySelector(".hours").innerHTML =
+      convertEnglishNumberToBanglaNumber(hours);
+    document.querySelector(".mins").innerHTML =
+      convertEnglishNumberToBanglaNumber(mins);
+    document.querySelector(".secs").innerHTML =
+      convertEnglishNumberToBanglaNumber(secs);
+  }
+
+  // call the displayTime function every second
+  setInterval(displayTime, 1000);
+</script>
