@@ -94,7 +94,8 @@ html {
   }
 
   .timer-wrapper h1 {
-    font-size: 25px;
+    font-size: 22px;
+    margin-bottom: 10px;
   }
 
   .timer-wrapper h2 {
